@@ -31,11 +31,12 @@ describe('Adding and Removing Tasks', function() {
   });
 
   it('#remove_task should alert the user with an error message if the input is not a number', function() {
+    spyOn(window, 'alert');
+
     $('#task_num').val('cat');
     $('#remove_task').submit();
-    
-    // this is not the right test
-    //expect(alert('blah'));
+
+    expect(window.alert).toHaveBeenCalledWith('Must be a number wise guy!');
   });
 
 });
