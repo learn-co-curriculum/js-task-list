@@ -13,14 +13,14 @@ describe('Adding and Removing Tasks', function() {
     displayList();
   });
 
-  it('#add_task should add a task to ul#task_list', function() {
+  it('form#add_task should add a task to ul#task_list', function() {
     $('#task_name').val('buy groceries');
     $('#add_task').submit();
 
     expect($('#task_list').children().first().text()).toBe('1. buy groceries');
   });
 
-  it('#remove_task should remove the specified task from ul#task_list', function() {
+  it('form#remove_task should remove the specified task from ul#task_list', function() {
     $('#task_name').val('do laundry');
     $('#add_task').submit();
     $('#task_num').val('1');
@@ -29,11 +29,11 @@ describe('Adding and Removing Tasks', function() {
     expect($('#task_list').children().text()).not.toContain('buy groceries');
   });
 
-  it('#remove_task should adjust the numbering of the remaining list items', function() {
+  it('form#remove_task should adjust the numbering of the remaining list items', function() {
     expect($('#task_list').children().first().text()).toBe('1. do laundry');
   });
 
-  it('#remove_task should alert the user with an error message if the input is not a number', function() {
+  it('form#remove_task should alert the user with an error message if the input is not a number', function() {
     spyOn(window, 'alert');
 
     $('#task_num').val('cat');
