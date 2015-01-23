@@ -2,7 +2,10 @@
 
 describe('Adding and Removing Tasks', function() {
   beforeEach(function() {
-    setFixtures('<div id="wrapper"><h1>my to do list</h1>  <form id="add_task" action="#" method="post"><label for="task_name">Add a new task:</label><input type="text" id="task_name" name="task_name" placeholder="taskname"><input type="submit" value="(+) add"></form><!-- #add_task --><form id="remove_task" action="#" method="post"><label for="task_num">Remove task:</label><input type="text" id="task_num" name="task_num" placeholder="number"><input type="submit" value="(-) remove"></form><!-- #remove_task --><ul id="task_list"></ul><!-- #task_list --></div><!-- #wrapper -->');
+    var currentPath = $('script').eq(7).attr('src');
+    currentPath = currentPath.replace("lib/tasklist.js", "");
+    jasmine.getFixtures().fixturesPath = currentPath;
+    loadFixtures('index.html');
 
     $('form').submit(function(e){ e.preventDefault(); });
     $('#add_task').submit(addTask);
