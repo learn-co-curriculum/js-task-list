@@ -11,3 +11,5 @@ You can see a working copy live at: [http://learn-co-curriculum.github.io/task-l
 ### Bonus
 
 1. Add jQuery UI Sortable to the list so that tasks can be dragged and dropped to reorder.
+
+<a href='https://learn.co/lessons/js-task-list' data-visibility='hidden'>View this lesson on Learn.co</a>
